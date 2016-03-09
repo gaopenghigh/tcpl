@@ -1,0 +1,16 @@
+adsfas
+1 * 1 = 1
+8 / 4 = 2
+1 * 2 / 1 = 2
+
+a // b 
+
+echo "abde \n \sff ";
+echo 'abde \n \""sff ';
+
+aaa /* comment */ bbb
+/*
+ * multi line 
+ * comment
+ */
+aaa /* comment */
