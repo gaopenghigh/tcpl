@@ -7,6 +7,10 @@ double myatof(char s[]) {
     int sign = 1;
 
     int i = 0;
+    while (s[i] == ' ' || s[i] == '\t') {
+        i++;
+    }
+
     if (s[i] == '-') {
         sign = -1;
         i++;
@@ -16,22 +20,19 @@ double myatof(char s[]) {
     }
 
     double r = 0.0;
-    while (s[i] != '\0') {
-        if (s[i] == '.') {
-            if (flag) {
-                break;
-            }
-            flag = 1;
-        } else if (s[i] >= '0' && s[i] <= '9') {
-            if (flag) {
-                power++;
-            }
-            r = r * 10 + s[i] - '0';
-        } else {
-            break;
-        }
+    while (s[i] != '\0' && s[i] >= '0' && s[i] <= '9') {
+        r = r * 10 + s[i] - '0';
         i++;
-        printf("r = %f, power = %d\n", r, power);
+    }
+
+    if (s[i] == '.') {
+        i++;
+    }
+
+    while (s[i] != '\0' && s[i] >= '0' && s[i] <= '9') {
+        r = r * 10 + s[i] - '0';
+        i++;
+        power++;
     }
     while (power > 0) {
         r = r / 10;
@@ -42,6 +43,6 @@ double myatof(char s[]) {
 }
 
 int main() {
-    char s[] = "-01.1415";
+    char s[] = "-01.2332.";
     printf("%f\n", myatof(s));
 }
