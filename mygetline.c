@@ -1,5 +1,4 @@
 #include "stdio.h"
-#define MAXLINE = 1000
 
 int mygetline(char s[], int limit) {
     int n = 0;

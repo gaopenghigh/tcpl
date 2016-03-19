@@ -1,6 +1,5 @@
 #include "stdio.h"
 #include "ctype.h"
-#include "mygetline.c"
 
 #define MAX_LEN 1000
 
@@ -22,10 +21,4 @@ int myatoi(char s[]) {
         i++;
     }
     return r * sign;
-}
-
-int main() {
-    char s[MAX_LEN];
-    mygetline(s, MAX_LEN);
-    printf("%d\n", myatoi(s));
 }
